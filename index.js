@@ -6,9 +6,9 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-const handleroute = require("./route/route.js");
+const handleroute = require("./src/route/route.js");
 // const User = require("./Schema/UserSchema.js");
-const handleblog = require("./route/blogroute.js");
+const handleblog = require("./src/route/blogroute.js");
 
 
 
