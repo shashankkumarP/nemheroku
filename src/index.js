@@ -1,5 +1,7 @@
 const mongoDB = require("mongoose");
-
+require("dotenv").config();
+const PORT = process.env.PORT;
+const MONGODB_URL = process.env.MONGODB_URL;
 const express = require("express");
 const app = express();
 app.use(express.json());
@@ -50,10 +52,10 @@ app.get("/",(req,res)=>{
 //         res.status(401).send("id not found")
 //     }
 // })
-const PORT = process.env.PORT || 8000
+
 app.listen(PORT,async ()=>{
     // await mongoDB.connect("mongodb://localhost:27017/nem101")
-    await mongoDB.connect("mongodb+srv://shashank:12345@cluster0.bqj5iad.mongodb.net/?retryWrites=true&w=majority")
+    await mongoDB.connect(MONGODB_URL)
 
     console.log("started");
 })
