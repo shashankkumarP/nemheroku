@@ -25,6 +25,9 @@ const handleblog = require("./route/blogroute.js");
 
 app.use("/users",handleroute)
 app.use("/blogs",handleblog);
+app.get("/",(req,res)=>{
+    res.send("hello")
+})
 // app.get("/users",async (req,res)=>{
 //     let users = await User.find()
 //     res.send(users)
